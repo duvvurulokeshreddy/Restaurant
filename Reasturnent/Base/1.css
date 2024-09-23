@@ -1,0 +1,117 @@
+boby{
+    background: linear-gradient(45deg,white 70%,rgb(254, 233, 209));
+}
+.menu{
+    text-align: center;
+    padding: 130px;
+}
+
+.menu h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 45px;
+}
+
+.menu .menu-box{
+    padding: 100px 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.menu-card{
+    min-width: 270px;
+    width: 270px;
+    padding: 40px 20px;
+    background-color: white;
+    padding-top: 0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    overflow: visible;
+    margin-bottom: 100px;
+    box-shadow: 0 0 50px rgb(254, 233, 209);
+}
+.menu-card:hover img{
+    margin-top: -80px;
+}
+.menu-card img{
+    margin-bottom: 40px;
+    width: 180px;
+    height: 180px;
+    transition: all 0.3s;
+    border-radius: 14px;
+}
+
+.menu-card h4, .menu-card p,.menu-card span{
+    text-align: left;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.menu-card p{
+    font-size: 13px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.menu-card span{
+    color: rgb(241, 147, 73);
+    font-weight: 700;
+}
+.sec6{
+    padding: 0% 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.sec6 img{
+    width: 200px;
+}
+.sec6 div{
+    max-width: 200px;
+}
+.sec6 ul li:first-child{
+    font-weight: 700;
+}
+.sec6 li, .sec6 p{
+    padding: 10px 0;
+}
+.sec6 p,.sec6 a{
+    color: gray;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.sec6 a:hover{
+    color: rgb(239, 122, 30);
+}
+
+.footer{
+    text-align: center;
+    padding: 1.5% 0;
+    margin-top: 7%;
+    font-size: 14px;
+    background-color: rgba(239, 121 , 30, 0.3);
+}
+
+.menu-toggle {
+    margin-bottom: 30px;
+}
+
+.menu-toggle button {
+    background-color: rgb(239, 121, 30);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu-toggle button:hover {
+    background-color: rgb(204, 102, 20);
+    transform: scale(1.05);
+}

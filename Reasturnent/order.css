@@ -1,0 +1,91 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8; /* Light background for a fresh look */
+    color: #333; /* Dark text for readability */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff; /* Clean white background for the container */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+h1 {
+    text-align: center;
+    color: #4a90e2; /* Soft blue for the heading */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #555; /* Darker gray for labels */
+}
+
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus {
+    border-color: #4a90e2; /* Blue border on focus */
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4a90e2; /* Interactive blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #357ABD; /* Darker blue on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.hidden {
+    display: none; /* Hides elements */
+}
+
+#menu-items {
+    list-style: none;
+    padding: 0;
+}
+
+#menu-items li {
+    padding: 10px;
+    background-color: #e3f2fd; /* Light blue for menu items */
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#menu-items li:hover {
+    background-color: #bbdefb; /* Slightly darker blue on hover */
+}
+
+#order-confirmation {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #28a745; /* Green border for confirmation */
+    background-color: #d4edda; /* Light green background */
+    border-radius: 5px;
+}

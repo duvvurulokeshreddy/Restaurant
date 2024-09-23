@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Events</title>
+    <link rel="stylesheet" href="events.css">
+</head>
+<body>
+
+    <section id="events">
+        <h1>Upcoming Events</h1>
+    
+        <div class="event">
+            <h2>Wine Tasting Night</h2>
+            <p class="event-date">Date: October 10, 2024</p>
+            <p class="event-details">Join us for a night of wine tasting featuring top local and international wines. Reserve your spot now!</p>
+            <button class="book-btn" onclick="openBookingForm('Wine Tasting Night')">Book Now</button>
+        </div>
+    
+        <div class="event">
+            <h2>Live Music Night</h2>
+            <p class="event-date">Date: October 15, 2024</p>
+            <p class="event-details">Enjoy live performances from talented musicians while savoring our special menu for the night.</p>
+            <button class="book-btn" onclick="openBookingForm('Live Music Night')">Book Now</button>
+        </div>
+    
+        <div class="event">
+            <h2>Chef's Special Dinner</h2>
+            <p class="event-date">Date: October 20, 2024</p>
+            <p class="event-details">A four-course dinner prepared by our head chef, showcasing seasonal ingredients and unique flavors.</p>
+            <button class="book-btn" onclick="openBookingForm('Chef\'s Special Dinner')">Book Now</button>
+        </div>
+    </section>
+    
+    <div class="event-image-container">
+        <img src="https://restaurant.org/NRA/media/Home-page/Event.jpg" alt="Wine Tasting Event" class="event-image">
+    </div>
+  
+ 
+
+ <!-- Booking Form (hidden by default) -->
+ <div id="booking-form" class="modal" style="display: none;">
+     <div class="modal-content">
+         <span class="close" onclick="closeBookingForm()">&times;</span>
+         <h2>Book Event: <span id="event-name"></span></h2>
+         <form id="bookEventForm" onsubmit="sendEmail(event)">
+             <label for="name">Your Name:</label>
+             <input type="text" id="name" required>
+             <label for="email">Your Email:</label>
+             <input type="email" id="email" required>
+             <button type="submit">Confirm Booking</button>
+         </form>
+         <button class="book-btn" onclick="openBookingForm('Wine Tasting Night')">Book Now</button>
+
+     </div>
+ </div>
+
+ <!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+ 
+ <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Initialize EmailJS with your actual user ID
+    emailjs.init("yfhQLWZ_u4QAE5fjd"); // Replace with your actual user ID
+
+    // Open the booking form for the selected event
+    window.openBookingForm = function(eventName) {
+        // Set the event name in the form
+        document.getElementById('event-name').textContent = eventName;
+        // Display the booking form modal
+        document.getElementById('booking-form').style.display = 'block';
+    };
+
+    // Close the booking form
+    window.closeBookingForm = function() {
+        // Hide the booking form modal
+        document.getElementById('booking-form').style.display = 'none';
+    };
+
+    // Function to handle email sending and booking confirmation
+    window.sendEmail = function(event) {
+        event.preventDefault(); // Prevent form submission from reloading the page
+
+        // Get values from the form fields
+        const eventName = document.getElementById('event-name').textContent;
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+
+        // Parameters to send in the email
+        const templateParams = {
+            event_name: eventName,
+            user_name: name,
+            user_email: email
+        };
+
+        // Use EmailJS to send the booking confirmation
+        emailjs.send('service_9hgc4i6', 'template_ubaq538', templateParams)
+            .then(function(response) {
+                // On success, display confirmation alert and close the booking form
+                alert('Booking confirmed! A confirmation email has been sent to ' + email + '.');
+                closeBookingForm(); // Close form on success
+            }, function(error) {
+                // On failure, log error and display error message to the user
+                console.error('Failed to send email. Error:', error);
+                alert('Failed to send booking confirmation. Please try again. Error: ' + JSON.stringify(error));
+            });
+    };
+});
+
+ </script>    -->
+
+ <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+ <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+ <script>
+     document.addEventListener("DOMContentLoaded", function() {
+         // Initialize EmailJS with your actual user ID
+         emailjs.init("yfhQLWZ_u4QAE5fjd"); // Replace with your actual EmailJS public key
+ 
+         // Open the booking form for the selected event
+         window.openBookingForm = function(eventName) {
+             document.getElementById('event-name').textContent = eventName;
+             document.getElementById('booking-form').style.display = 'block';
+         };
+ 
+         // Close the booking form
+         window.closeBookingForm = function() {
+             document.getElementById('booking-form').style.display = 'none';
+         };
+ 
+         // Function to handle email sending and booking confirmation
+         window.sendEmail = function(event) {
+             event.preventDefault(); // Prevent form submission from reloading the page
+ 
+             // Get values from the form fields
+             const eventName = document.getElementById('event-name').textContent;
+             const name = document.getElementById('name').value;
+             const email = document.getElementById('email').value;
+ 
+             // Parameters to send in the email
+             const templateParams = {
+                 event_name: eventName,
+                 user_name: name,
+                 user_email: email
+             };
+ 
+             // Use EmailJS to send the booking confirmation
+             emailjs.send('service_2012ngs', 'template_ubaq538', templateParams)
+                 .then(function(response) {
+                     // On success, display confirmation alert and close the booking form
+                     alert('Booking confirmed! A confirmation email has been sent to ' + email + '.');
+                     closeBookingForm(); // Close form on success
+                 }, function(error) {
+                     // On failure, log error and display error message to the user
+                     console.error('Failed to send email. Error:', error);
+                     alert('Failed to send booking confirmation. Please try again. Error: ' + JSON.stringify(error));
+                 });
+         };
+     });
+    </script>
+
+
+</body>
+</html>
+
+

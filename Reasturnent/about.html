@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About Us - Hotel</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <div class="about-container">
+        <div class="about-image">
+            <img src="images/img3.png" alt="Hotel" /> <!-- Replace with your image URL -->
+        </div>
+        <div class="about-content">
+            <h1>About Our Hotel</h1>
+            <p id="about-text">
+                Welcome to our hotel, where we offer a wide range of culinary experiences. Our menu includes traditional, international, and gourmet dishes, all prepared with the freshest ingredients and utmost care. Whether you're in the mood for a hearty meal or a light snack, we promise an unforgettable dining experience.
+            </p>
+            <button id="more-info-btn">Read More</button>
+            <p id="extra-info" style="display:none;">
+                Our chefs are passionate about delivering excellence with every dish, ensuring a delightful fusion of flavors and world-class service. Enjoy a relaxing ambiance, impeccable hospitality, and food crafted to satisfy all tastes.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("more-info-btn").addEventListener("click", function() {
+    const extraInfo = document.getElementById("extra-info");
+    if (extraInfo.style.display === "none") {
+        extraInfo.style.display = "block";
+        this.textContent = "Read Less";
+    } else {
+        extraInfo.style.display = "none";
+        this.textContent = "Read More";
+    }
+});
+
+    </script>
+</body>
+</html>

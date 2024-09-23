@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Order System</title>
+    <link rel="stylesheet" href="order.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Food Order System</h1>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" required>
+
+        <label for="restaurant">Select Restaurant:</label>
+        <select id="restaurant">
+            <option value="">--Select a Restaurant--</option>
+            <option value="pizza">Pizza Place</option>
+            <option value="sushi">Sushi Spot</option>
+            <option value="burger">Burger Joint</option>
+        </select>
+
+        <div id="menu" class="hidden">
+            <h2>Menu</h2>
+            <ul id="menu-items"></ul>
+            <button id="order-button">Place Order</button>
+        </div>
+
+        <div id="order-confirmation" class="hidden">
+            <h2>Your Order</h2>
+            <p id="order-details"></p>
+            <button id="new-order">New Order</button>
+        </div>
+    </div>
+
+    <!-- <script>
+        const restaurantSelect = document.getElementById('restaurant');
+const menuDiv = document.getElementById('menu');
+const menuItemsList = document.getElementById('menu-items');
+const orderButton = document.getElementById('order-button');
+const orderConfirmation = document.getElementById('order-confirmation');
+const orderDetails = document.getElementById('order-details');
+const newOrderButton = document.getElementById('new-order');
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const addressInput = document.getElementById('address');
+
+const menus = {
+    pizza: ['Margherita', 'Pepperoni', 'Veggie'],
+    sushi: ['California Roll', 'Sashimi', 'Tempura'],
+    burger: ['Cheeseburger', 'Veggie Burger', 'Chicken Burger'],
+};
+
+restaurantSelect.addEventListener('change', function() {
+    const selectedRestaurant = this.value;
+    menuItemsList.innerHTML = '';
+
+    if (selectedRestaurant) {
+        menus[selectedRestaurant].forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = item;
+            menuItemsList.appendChild(li);
+        });
+        menuDiv.classList.remove('hidden');
+    } else {
+        menuDiv.classList.add('hidden');
+        orderConfirmation.classList.add('hidden');
+    }
+});
+
+orderButton.addEventListener('click', function() {
+    const selectedRestaurant = restaurantSelect.value;
+    const orderItems = Array.from(menuItemsList.children)
+        .map(item => item.textContent)
+        .join(', ');
+
+    if (orderItems && nameInput.value && emailInput.value && addressInput.value) {
+        orderDetails.textContent = `Name: ${nameInput.value}\nEmail: ${emailInput.value}\nAddress: ${addressInput.value}\nRestaurant: ${selectedRestaurant}\nOrder: ${orderItems}`;
+        orderConfirmation.classList.remove('hidden');
+        menuDiv.classList.add('hidden');
+
+        // Send email using EmailJS
+        const templateParams = {
+            name: nameInput.value,
+            email: emailInput.value,
+            address: addressInput.value,
+            restaurant: selectedRestaurant,
+            order: orderItems
+        };
+
+        emailjs.send('service_2012ngs', 'template_nei2jkh', templateParams)
+            .then(function(response) {
+                console.log('SUCCESS!', response.status, response.text);
+                alert('Order placed! Confirmation email sent.');
+            }, function(error) {
+                console.error('FAILED...', error);
+                alert('Failed to send email. Please try again later.');
+            });
+    } else {
+        alert('Please fill out all fields and select items from the menu.');
+    }
+});
+
+newOrderButton.addEventListener('click', function() {
+    restaurantSelect.value = '';
+    nameInput.value = '';
+    emailInput.value = '';
+    addressInput.value = '';
+    menuDiv.classList.add('hidden');
+    orderConfirmation.classList.add('hidden');
+});
+
+    </script> -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initialize EmailJS with your actual user ID
+            emailjs.init("yfhQLWZ_u4QAE5fjd"); // Replace with your actual EmailJS public key
+    
+            const restaurantSelect = document.getElementById('restaurant');
+            const menuDiv = document.getElementById('menu');
+            const menuItemsList = document.getElementById('menu-items');
+            const orderButton = document.getElementById('order-button');
+            const orderConfirmation = document.getElementById('order-confirmation');
+            const orderDetails = document.getElementById('order-details');
+            const newOrderButton = document.getElementById('new-order');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const addressInput = document.getElementById('address');
+    
+            const menus = {
+                pizza: ['Margherita', 'Pepperoni', 'Veggie'],
+                sushi: ['California Roll', 'Sashimi', 'Tempura'],
+                burger: ['Cheeseburger', 'Veggie Burger', 'Chicken Burger'],
+            };
+    
+            restaurantSelect.addEventListener('change', function() {
+                const selectedRestaurant = this.value;
+                menuItemsList.innerHTML = '';
+    
+                if (selectedRestaurant) {
+                    menus[selectedRestaurant].forEach(item => {
+                        const li = document.createElement('li');
+                        li.textContent = item;
+                        menuItemsList.appendChild(li);
+                    });
+                    menuDiv.classList.remove('hidden');
+                } else {
+                    menuDiv.classList.add('hidden');
+                    orderConfirmation.classList.add('hidden');
+                }
+            });
+    
+            orderButton.addEventListener('click', function() {
+                const selectedRestaurant = restaurantSelect.value;
+                const orderItems = Array.from(menuItemsList.children)
+                    .map(item => item.textContent)
+                    .join(', ');
+    
+                if (orderItems && nameInput.value && emailInput.value && addressInput.value) {
+                    orderDetails.textContent = `Name: ${nameInput.value}\nEmail: ${emailInput.value}\nAddress: ${addressInput.value}\nRestaurant: ${selectedRestaurant}\nOrder: ${orderItems}`;
+                    orderConfirmation.classList.remove('hidden');
+                    menuDiv.classList.add('hidden');
+    
+                    // Parameters to send in the email
+                    const templateParams = {
+                        name: nameInput.value,
+                        email: emailInput.value,
+                        address: addressInput.value,
+                        restaurant: selectedRestaurant,
+                        order: orderItems
+                    };
+    
+                    // Use EmailJS to send the order confirmation
+                    emailjs.send('service_2012ngs', 'template_nei2jkh', templateParams)
+                        .then(function(response) {
+                            console.log('SUCCESS!', response.status, response.text);
+                            alert('Order placed! Confirmation email sent.');
+                        }, function(error) {
+                            console.error('FAILED...', error);
+                            alert('Failed to send email. Please try again later.');
+                        });
+                } else {
+                    alert('Please fill out all fields and select items from the menu.');
+                }
+            });
+    
+            newOrderButton.addEventListener('click', function() {
+                restaurantSelect.value = '';
+                nameInput.value = '';
+                emailInput.value = '';
+                addressInput.value = '';
+                menuDiv.classList.add('hidden');
+                orderConfirmation.classList.add('hidden');
+            });
+        });
+    </script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <title>Order Form | Duvvuru Lokesh Reddy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="1.css">
+    <link rel="stylesheet" href="3.css">
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .menu-card { margin: 20px; border: 1px solid #ddd; padding: 10px; }
+        .order-summary { margin-top: 20px; }
+        .order-form { display: none; margin-top: 20px; }
+        .button { margin: 5px; padding: 10px; background-color: #28a745; color: white; border: none; cursor: pointer; }
+        .button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav1">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="reserve.html">Reservation</a>
+        </div>
+        <div class="logo">
+            <img src="images/logo.jpg">
+        </div>
+        <div class="nav2">
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="user">
+                <a href="login.html">
+                    <i class="fa-solid fa-user"></i>
+                    <span>User</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu">
+        <h1>Our Delicious Food</h1>
+        <div class="menu-toggle">
+            <button onclick="showMenu('veg')">Veg Items</button>
+            <button onclick="showMenu('non-veg')">Non-Veg Items</button>
+        </div>
+
+        <div id="non-veg-items" style="display: none;">
+            <h2>Non-Veg Items</h2>
+            <div class="menu-box">
+                <div class="menu-card" data-price="99">
+                    <img src="images/chicken stick.jpg" alt="Chicken Stick" style="width: 100%; height: auto;">
+                    <h4>Chicken Stick</h4>
+                    <p>Teriyaki Chicken on a Stick that kids love...</p>
+                    <span>₹99.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="119">
+                    <img src="images/chicken leg pice.jpeg" alt="Chicken Leg Pieces"style="width: 100%; height: auto;">
+                    <h4>Chicken Leg Pieces</h4>
+                    <p>Chicken leg pieces are usually baked or deep-fried...</p>
+                    <span>₹119.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="149.00">
+                    <img src="images/chicken 65.jpeg" alt="Chicken 65" style="width: 100%; height: auto;">
+                    <h4>Chicken 65</h4>
+                    <p>Spicy, crunchy on the outside and succulent inside...</p>
+                    <span>₹149.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="129">
+                    <img src="images/chicken friedrice.jpg" alt="Fried Rice" style="width: 100%; height: auto;">
+                    <h4>Fried Rice</h4>
+                    <p>Fried rice is a dish that is meant to repurpose...</p>
+                    <span>₹129.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="199">
+                    <img src="images/chicken brianya.jpeg" alt="Chicken Biryani" style="width: 100%; height: auto;">
+                    <h4>Chicken Biryani</h4>
+                    <p>The traditional Chicken Biryani recipe appears intricate...</p>
+                    <span>₹199.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="399">
+                    <img src="images/chicken mandi.jpg" alt="Chicken Mandi"style="width: 100%; height: auto;">
+                    <h4>Chicken Mandi</h4>
+                    <p>Chicken Mandi is a traditional Arabian dish...</p>
+                    <span>₹399.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="199">
+                    <img src="images/mutton curry.jpg" alt="Mutton Curry" style="width: 100%; height: auto;">
+                    <h4>Mutton Curry</h4>
+                    <p>Succulent mutton slow-cooked in flavorful gravy...</p>
+                    <span>₹199.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="179">
+                    <img src="images/Mutton fry.jpg" alt="" style="width: 100%; height: auto;">
+                    <h4>Mutton Fry</h4>
+                    <p>Crispy mutton fry, marinated with flavorful spices and fried to perfection, offering a deliciously savory and tender dish.</p>
+                    <span>₹179.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card"data-price="249">
+                    <img src="images/mutton biryani.jpeg" alt="Mutton Biryani" style="width: 100%; height: auto;">
+                    <h4>Mutton Biryani</h4>
+                    <p>Fragrant basmati rice layered with tender mutton...</p>
+                    <span>₹249.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="199">
+                    <img src="images/prawns fry.jpeg" alt="Prawns Curry"style="width: 100%; height: auto;">
+                    <h4>Prawns Curry</h4>
+                    <p>Succulent prawns cooked in a blend of spices...</p>
+                    <span>₹199.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card"data-price="179">
+                    <img src="images/royalu.jpg" alt=""style="width: 100%; height: auto;">
+                    <h4>Prawns Fry</h4>
+                    <p>Succulent prawns (royalu) cooked in a blend of traditional spices, creating a flavorful seafood dish that's rich and aromatic</p>
+                    <span>₹179.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="159">
+                    <img src="images/fish.jpg" alt="Fish Curry"style="width: 100%; height: auto;">
+                    <h4>Fish Curry</h4>
+                    <p>Authentic fish curry, simmered in a rich blend of spices...</p>
+                    <span>₹159.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="139" style="width: 100px; height: auto;">
+                    <img src="images/fish fry.jpeg" alt="">
+                    <h4>Fish Fry recipe</h4>
+                    <p>Deliciously crispy fish fry, marinated with special spices and herbs, fried to perfection for a mouthwatering seafood delight.</p>
+                    <span>₹139.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="109">
+                    <img src="images/egg curry.jpg" alt="Egg Curry"style="width: 100%; height: auto;">
+                    <h4>Egg Curry</h4>
+                    <p>Boiled eggs simmered in a rich, spiced tomato-onion gravy...</p>
+                    <span>₹109.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="49" style="width: 100px; height: auto;">
+                    <img src="images/egg fry.jpg" alt="">
+                    <h4>Egg Fry</h4>
+                    <p>Crispy fried eggs seasoned with spices, offering a delightful crunch and savory flavor, perfect as a quick snack or side dishs.</p>
+                    <span>₹49.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div id="veg-items" style="display: none;">
+            <h2>Veg Items</h2>
+            <div class="menu-box">
+                <div class="menu-card" data-price="149">
+                    <img src="images/all food.avif" alt="">
+                    <h4>Veg Mandi</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nulla consequatur iusto modi, animi similique autem quos, porro veniam, rem iste. Itaque, inventore culpa suscipit reprehenderit beatae repudiandae sapiente praesentium.</p>
+                    <span>₹149.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="199">
+                    <img src="images/img4.png" alt="" style="width: 100%; height: auto;">
+                    <h4>Special Veg Mandi</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nulla consequatur iusto modi, animi similique autem quos, porro veniam, rem iste. Itaque, inventore culpa suscipit reprehenderit beatae repudiandae sapiente praesentium.</p>
+                    <span>₹199.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="139">
+                    <img src="images/panner curry.jpeg" alt="" style="width: 100%; height: auto;">
+                    <h4>Panner Curry</h4>
+                    <p>Soft paneer cubes cooked in a creamy, spiced tomato gravy, delivering a rich and satisfying flavor perfect for any meal.</p>
+                    <span>₹139.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="159">
+                    <img src="images/panner.jpeg" alt=""style="width: 100%; height: auto;" >
+                    <h4>Panner Butter Masala</h4>
+                    <p>Paneer butter masala features rich, creamy tomato sauce with buttery spices, making it a delightful and indulgent dish for any occasion.</p>
+                    <span>₹159.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="149">
+                    <img src="images/gobi.jpg" alt="" style="width: 100%; height: auto;">
+                    <h4>Gobi Curry</h4>
+                    <p>Tender cauliflower florets simmered in a rich, spiced gravy, creating a delicious gobi curry that's perfect with rice or naan.</p>
+                    <span>₹149.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="109">
+                    <img src="images/gobi curry.jpg" alt="" style="width: 100%; height: auto;">
+                    <h4>Gobi Fri</h4>
+                    <p>Flavorful gobi (cauliflower) dishes, seasoned with spices and herbs, offering a delightful combination of textures and tastes in every bite.</p>
+                    <span>₹109.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="99">
+                    <img src="images/veg roll.jpeg" alt=""style="width: 100%; height: auto;">
+                    <h4>Veg roll</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nulla consequatur iusto modi, animi similique autem quos, porro veniam, rem iste. Itaque, inventore culpa suscipit reprehenderit beatae repudiandae sapiente praesentium.</p>
+                    <span>₹99.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="109">
+                    <img src="images/pizza.jpeg" alt="" style="width: 100%; height: auto;">
+                    <h4>Pizza</h4>
+                    <p>Delicious, oven-baked pizza topped with a medley of fresh ingredients, melted cheese, and zesty sauce, perfect for any pizza lover.</p>
+                    <span>₹109.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+                <div class="menu-card" data-price="79">
+                    <img src="images/img9.png" alt="">
+                    <h4>Bagaer</h4>
+                    <p>Soft, fluffy bagels, perfectly baked and topped with a variety of seeds, ideal for breakfast or a tasty snack</p>
+                    <span>₹79.00</span>
+                    <button onclick="addItem(this)">Add</button>
+                    <button onclick="removeItem(this)">Remove</button>
+                    <p>Quantity: <span class="quantity">0</span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="order-summary">
+            <h3>Order Summary</h3>
+            <p>Total Items: <span id="total-items">0</span></p>
+            <p>Total Amount: ₹<span id="total-amount">0</span></p>
+           <button id="place-order-button" onclick="showOrderForm()"><center>Place Order</center></button>
+            
+        </div>
+
+        <div class="order-form" id="order-form">
+            <h3>Order Form</h3>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            
+            <label for="address">Address:</label>
+            <input type="text" id="address" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" required>
+            
+            <label for="time">Time Taken (minutes):</label>
+            <input type="number" id="time" required>
+            
+            <label>Payment Method:</label>
+            <select id="payment" onchange="toggleUPIInput()">
+                <option value="upi">UPI</option>
+                <option value="cash">Cash on Delivery</option>
+            </select>
+            
+            <div id="upi-section" style="display:none;">
+                <label for="upi-amount">Amount (₹):</label>
+                <input type="number" id="upi-amount" required>
+                <button class="button" onclick="openUPIScanner()">Scan UPI</button>
+            </div>
+            
+            <div id="total-amount">
+                <h4>Total Amount: ₹<span id="total">0</span></h4>
+            </div>
+            
+            <button class="button" onclick="submitOrder()">Submit Order</button>
+
+        </div>
+    
+    <div class="footer">
+        <p>Copyright &copy; 2024 Lokesh Reddy | All rights reserved</p>
+    </div>
+
+    
+    <script>
+        let totalItems = 0;
+        let totalAmount = 0;
+    
+        function showMenu(section) {
+            document.getElementById('veg-items').style.display = section === 'veg' ? 'block' : 'none';
+            document.getElementById('non-veg-items').style.display = section === 'non-veg' ? 'block' : 'none';
+        }
+    
+        function updateSummary() {
+            document.getElementById('total-items').innerText = totalItems;
+            document.getElementById('total-amount').innerText = totalAmount;
+    
+            // Show or hide the "Place Order" button based on total amount
+            document.getElementById('place-order-button').style.display = totalAmount > 1 ? 'block' : 'none';
+        }
+    
+        function addItem(button) {
+            const menuCard = button.parentElement;
+            const price = parseInt(menuCard.getAttribute('data-price'));
+            const quantitySpan = menuCard.querySelector('.quantity');
+            let quantity = parseInt(quantitySpan.innerText);
+    
+            quantity += 1;
+            totalItems += 1;
+            totalAmount += price;
+    
+            quantitySpan.innerText = quantity;
+            updateSummary();
+        }
+    
+        function removeItem(button) {
+            const menuCard = button.parentElement;
+            const price = parseInt(menuCard.getAttribute('data-price'));
+            const quantitySpan = menuCard.querySelector('.quantity');
+            let quantity = parseInt(quantitySpan.innerText);
+    
+            if (quantity > 0) {
+                quantity -= 1;
+                totalItems -= 1;
+                totalAmount -= price;
+            }
+    
+            quantitySpan.innerText = quantity;
+            updateSummary();
+        }
+    
+        function showOrderForm() {
+            document.getElementById('order-form').style.display = 'block';
+        }
+    
+        function submitOrder() {
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+            const time = document.getElementById('time').value;
+            const payment = document.getElementById('payment').value;
+    
+            alert(`Order Details:\nEmail: ${email}\nAddress: ${address}\nPhone: ${phone}\nTime: ${time} mins\nPayment: ${payment}\nTotal Items: ${totalItems}\nTotal Amount: ₹${totalAmount}`);
+            
+            // Reset form and order summary
+            document.getElementById('order-form').reset();
+            totalItems = 0;
+            totalAmount = 0;
+            updateSummary();
+            document.getElementById('order-form').style.display = 'none';
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            showMenu('non-veg'); // Default to show Non-Veg items
+            updateSummary(); // Initialize the summary
+        });
+
+        
+
+    </script>
+    
+    
+</body>
+</html>

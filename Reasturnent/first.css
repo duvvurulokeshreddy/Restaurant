@@ -1,0 +1,163 @@
+
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.loader {
+    width: 120px;
+    height: 20px;
+    border-radius: 20px;
+    background:
+     linear-gradient(orange 0 0) 0/0% no-repeat
+     lightblue;
+    animation: l2 2s infinite steps(10);
+  }
+  @keyframes l2 {
+      100% {background-size:110%}
+  }
+  
+
+/* Container styles */
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 900px; /* Increased width for side-by-side layout */
+    text-align: center;
+}
+
+/* Animated Heading Styles */
+.animated-heading {
+    font-size: 32px;
+    color: #ff6347;
+    margin-bottom: 20px;
+    animation: fadeIn 3s ease-in-out;
+    text-align: center;
+    font-family: 'Georgia', serif;
+}
+
+/* Flexbox layout for content (image and forms) */
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Login image styles */
+.login-image {
+    flex: 1;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.login-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+/* Forms section (both login and register forms) */
+.forms-section {
+    flex: 1;
+    text-align: left;
+}
+
+/* Form styles */
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.form button:hover {
+    background-color: #218838;
+}
+
+.form p {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.form p span {
+    color: #007bff;
+    cursor: pointer;
+}
+
+.form p span:hover {
+    text-decoration: underline;
+}
+
+/* Hidden form toggle */
+.hidden {
+    display: none;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        max-width: 90%;
+    }
+    .content {
+        flex-direction: column;
+    }
+    .login-image {
+        margin-bottom: 20px;
+    }
+}

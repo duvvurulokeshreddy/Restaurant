@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>1 | Duvvuru Lokesh Reddy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+    <nav>
+        <div class="nav1">
+            <a href="index.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="reserve.html">Reservation</a>
+        </div>
+        <div class="logo">
+            <img src="images/logo.jpg">
+        </div>
+        <div class="nav2">
+            <div class="search">
+                <input type="text" placeholder="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="user">
+                <a href="login.html">
+                    <i class="fa-solid fa-user"></i>
+                    <span>User</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="menu">
+        <h1>Our Delicious Food</h1>
+        <br><br><br><br><br>
+        <div class="menu-toggle">
+            <button onclick="showMenu('veg')">Veg Items</button>
+            <button onclick="showMenu('non-veg')">Non-Veg Items</button>
+        </div>
+        <div id="non-veg-items" style="display: none;">
+        <h2>Non-Veg Items</h2>
+        <div class="menu-box">
+            <div class="menu-card">
+                <img src="images/chicken stick.jpg" alt="Chicken Stick">
+                <h4>Chicken Stick</h4>
+                <p>Teriyaki Chicken on a Stick that kids love...</p>
+                <span>₹99.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/chicken leg pice.jpeg" alt="Chicken Leg Pieces">
+                <h4>Chicken Leg Pieces</h4>
+                <p>Chicken leg pieces are usually baked or deep-fried...</p>
+                <span>₹119.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/chicken 65.jpeg" alt="Chicken 65">
+                <h4>Chicken 65</h4>
+                <p>Spicy, crunchy on the outside and succulent inside...</p>
+                <span>₹149.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/chicken friedrice.jpg" alt="Fried Rice">
+                <h4>Fried Rice</h4>
+                <p>Fried rice is a dish that is meant to repurpose...</p>
+                <span>₹129.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/chicken brianya.jpeg" alt="Chicken Biryani">
+                <h4>Chicken Biryani</h4>
+                <p>The traditional Chicken Biryani recipe appears intricate...</p>
+                <span>₹199.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/chicken mandi.jpg" alt="Chicken Mandi">
+                <h4>Chicken Mandi</h4>
+                <p>Chicken Mandi is a traditional Arabian dish...</p>
+                <span>₹399.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/mutton curry.jpg" alt="Mutton Curry">
+                <h4>Mutton Curry</h4>
+                <p>Succulent mutton slow-cooked in flavorful gravy...</p>
+                <span>₹199.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/mutton biryani.jpeg" alt="Mutton Biryani">
+                <h4>Mutton Biryani</h4>
+                <p>Fragrant basmati rice layered with tender mutton...</p>
+                <span>₹249.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/prawns fry.jpeg" alt="Prawns Curry">
+                <h4>Prawns Curry</h4>
+                <p>Succulent prawns cooked in a blend of spices...</p>
+                <span>₹199.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/royalu.jpg" alt="">
+                <h4>Prawns Fry</h4>
+                <p>Succulent prawns (royalu) cooked in a blend of traditional spices, creating a flavorful seafood dish that's rich and aromatic</p>
+                <span>₹179.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/fish.jpg" alt="Fish Curry">
+                <h4>Fish Curry</h4>
+                <p>Authentic fish curry, simmered in a rich blend of spices...</p>
+                <span>₹159.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/egg curry.jpg" alt="Egg Curry">
+                <h4>Egg Curry</h4>
+                <p>Boiled eggs simmered in a rich, spiced tomato-onion gravy...</p>
+                <span>₹109.00</span>
+            </div>
+        </div>
+        </div>
+        <!-- Veg Items Section -->
+          <div id="veg-items" style="display: none;">
+        <h2>Veg Items</h2>
+        <div class="menu-box">
+            <div class="menu-card">
+                <img src="images/all food.avif" alt="">
+                <h4>Veg Mandi</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nulla consequatur iusto modi, animi similique autem quos, porro veniam, rem iste. Itaque, inventore culpa suscipit reprehenderit beatae repudiandae sapiente praesentium.</p>
+                <span>₹149.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/img4.png" alt="">
+                <h4>Special Veg Mandi</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nulla consequatur iusto modi, animi similique autem quos, porro veniam, rem iste. Itaque, inventore culpa suscipit reprehenderit beatae repudiandae sapiente praesentium.</p>
+                <span>₹199.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/panner curry.jpeg" alt="">
+                <h4>Panner Curry</h4>
+                <p>Soft paneer cubes cooked in a creamy, spiced tomato gravy, delivering a rich and satisfying flavor perfect for any meal.</p>
+                <span>₹139.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/panner.jpeg" alt="">
+                <h4>Panner Butter Masala</h4>
+                <p>Paneer butter masala features rich, creamy tomato sauce with buttery spices, making it a delightful and indulgent dish for any occasion.</p>
+                <span>₹159.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/gobi.jpg" alt="">
+                <h4>Gobi Curry</h4>
+                <p>Tender cauliflower florets simmered in a rich, spiced gravy, creating a delicious gobi curry that's perfect with rice or naan.</p>
+                <span>₹149.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/gobi curry.jpg" alt="">
+                <h4>Gobi Fri</h4>
+                <p>Flavorful gobi (cauliflower) dishes, seasoned with spices and herbs, offering a delightful combination of textures and tastes in every bite.</p>
+                <span>₹109.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/veg roll.jpeg" alt="">
+                <h4>Veg roll</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nulla consequatur iusto modi, animi similique autem quos, porro veniam, rem iste. Itaque, inventore culpa suscipit reprehenderit beatae repudiandae sapiente praesentium.</p>
+                <span>₹99.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/pizza.jpeg" alt="">
+                <h4>Pizza</h4>
+                <p>Delicious, oven-baked pizza topped with a medley of fresh ingredients, melted cheese, and zesty sauce, perfect for any pizza lover.</p>
+                <span>₹109.00</span>
+            </div>
+            <div class="menu-card">
+                <img src="images/img9.png" alt="">
+                <h4>Bagaer</h4>
+                <p>Soft, fluffy bagels, perfectly baked and topped with a variety of seeds, ideal for breakfast or a tasty snack</p>
+                <span>₹79.00</span>
+            </div>
+            <!-- Add more vegetarian items here -->
+        </div>
+    </div>
+
+    <div class="sec6">
+        <div>
+            <img src="images/logo.jpg" alt="">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit...</p>
+        </div>
+        <div>
+            <ul>
+                <li>Main Menu</li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="offer.html">Offers</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>Information</li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="order.html">Order & Returns</a></li>
+                <li><a href="#">Videos</a></li>
+                <li><a href="reserve.html">Reservation</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>Address</li>
+                <p>Naidupeta, India</p>
+                <p>9:00am - 11:00pm</p>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Copyright &copy; 2024 Lokesh Reddy | All rights reserved</p>
+    </div>
+    <script>
+        // Function to show the selected menu section
+        function showMenu(section) {
+            const vegItems = document.getElementById('veg-items');
+            const nonVegItems = document.getElementById('non-veg-items');
+    
+            if (section === 'veg') {
+                vegItems.style.display = 'block';
+                nonVegItems.style.display = 'none';
+            } else {
+                vegItems.style.display = 'none';
+                nonVegItems.style.display = 'block';
+            }
+        }
+    
+        // Initialize to show Non-Veg items by default
+        document.addEventListener('DOMContentLoaded', function() {
+            showMenu('non-veg');
+        });
+    </script>
+</body>
+</html>
